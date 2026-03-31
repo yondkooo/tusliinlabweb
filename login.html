@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DriveSchool — Нэвтрэх</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <nav class="topbar">
+      <a class="brand" href="index.html">DriveSchool</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Нүүр</a>
+       
+        <a href="test.html" class="nav-link">Шалгалт</a>
+        <a href="contract.html" class="nav-link">Гэрээ</a>
+        <a href="book.html" class="nav-link">Ном</a>
+        <a href="booking.html" class="nav-link">Захиалга</a>
+    
+      </div>
+      <button class="topbar-btn">Тусламж</button>
+      <button class="theme-btn" type="button" aria-label="Тод/хар горим">🌙</button>
+    </nav>
+
+    <section class="section">
+      <div class="page-header">
+        <h1>Нэвтрэх</h1>
+        <p>DriveSchool системд нэвтэрч, онол, практик, захиалга, гэрээ болон удирдлагын самбар руу хандалт аваарай.</p>
+      </div>
+
+      <div class="form-panel glass-card">
+        <div class="form-field">
+          <label for="email">Имэйл хаяг</label>
+          <input type="email" id="email" placeholder="taniiemail@example.com">
+        </div>
+        <div class="form-field">
+          <label for="password">Нууц үг</label>
+          <input type="password" id="password" placeholder="••••••••">
+        </div>
+        <div class="form-field">
+          <label for="role-select">Хэрэглэгчийн төрөл</label>
+          <select id="role-select">
+            <option value="student">
+                <a href="index.html">
+                Суралцагч</a></option>
+            <option value="teacher">
+                <a href="teacher-dashboard.html">
+                Багш</a></option>
+            <option value="admin"><a href="admin-dashboard.html">
+                Админ</a></option>
+          </select>
+        </div>
+        <button class="btn btn-primary btn-login">Нэвтрэх</button>
+        <p style="color: rgba(237,244,255,0.7); margin-top: 18px;">Admin болон Багшийн самбарт орохын тулд нэвтэрнэ үү.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2026 DriveSchool.</p>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

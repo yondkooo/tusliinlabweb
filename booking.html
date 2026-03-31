@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DriveSchool — Захиалга</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <nav class="topbar">
+      <a class="brand" href="index.html">DriveSchool</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Нүүр</a>
+       
+        <a href="test.html" class="nav-link">Шалгалт</a>
+        <a href="contract.html" class="nav-link">Гэрээ</a>
+        <a href="book.html" class="nav-link">Ном</a>
+        <a href="booking.html" class="nav-link active">Захиалга</a>
+        
+      </div>
+      <button class="topbar-btn">Тусламж</button>
+      <button class="theme-btn" type="button" aria-label="Тод/хар горим">🌙</button>
+    </nav>
+
+    <section class="section">
+      <div class="page-header">
+        <h1>Захиалга хийх</h1>
+        <p>Багш, машин, өдөр болон цагийг сонгож, дараагийн хичээлийг баталгаажуулна.</p>
+      </div>
+
+      <div class="glass-card">
+        <h2>Цагийн захиалга</h2>
+        <div class="form-field">
+          <label for="teacher">Багш сонгох</label>
+          <select id="teacher">
+            <option>Б. Мөнхбаяр</option>
+            <option>Д. Энхтөр</option>
+            <option>Г. Наранцэцэг</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="vehicle">Машин</label>
+          <select id="vehicle">
+            <option>Toyota Camry</option>
+            <option>Hyundai Sonata</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="date">Өдөр</label>
+          <input type="date" id="date" value="2024-05-15">
+        </div>
+        <button class="btn btn-primary">Цаг харах</button>
+      </div>
+
+      <div class="glass-card" style="margin-top: 18px;">
+        <h2>Боломжит цагууд</h2>
+        <div class="info-grid">
+          <div class="info-card"><strong>10:00</strong><span>Боломжтой</span></div>
+          <div class="info-card"><strong>11:00</strong><span>Захиалагдсан</span></div>
+          <div class="info-card"><strong>14:00</strong><span>Боломжтой</span></div>
+        </div>
+        <button class="btn btn-primary" style="margin-top: 20px;">Захиалах</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2026 DriveSchool.</p>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

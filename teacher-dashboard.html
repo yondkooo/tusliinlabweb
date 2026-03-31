@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DriveSchool — Багшийн Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <nav class="topbar">
+      <a class="brand" href="index.html">DriveSchool</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Нүүр</a>
+        <a href="test.html" class="nav-link">Шалгалт</a>
+        <a href="contract.html" class="nav-link">Гэрээ</a>
+        <a href="book.html" class="nav-link">Ном</a>
+        <a href="booking.html" class="nav-link">Захиалга</a>
+        <a href="teacher-dashboard.html" class="nav-link active">Багш</a>
+      </div>
+      <button class="topbar-btn">Тусламж</button>
+      <button class="theme-btn" type="button" aria-label="Тод/хар горим">🌙</button>
+    </nav>
+
+    <section class="section">
+      <div class="page-header">
+        <h1>Багшийн самбар</h1>
+        <p>Өнөөдрийн хичээл, сурагчдын захиалга болон санал хүсэлтээс хянах.</p>
+      </div>
+
+      <div class="dashboard-grid">
+        <div class="dashboard-card"><strong>8</strong><span>Захиалгатай сурагч</span></div>
+        <div class="dashboard-card"><strong>6</strong><span>Өнөөдрийн цаг</span></div>
+        <div class="dashboard-card"><strong>4.9</strong><span>Дундаж үнэлгээ</span></div>
+      </div>
+
+      <div class="glass-card" style="margin-top: 24px;">
+        <h2>Өнөөдрийн хуваарь</h2>
+        <div class="info-grid">
+          <div class="info-card"><strong>09:00</strong><span>Г. Болд - Toyota Camry</span></div>
+          <div class="info-card"><strong>11:00</strong><span>О. Наранбаатар - Hyundai Sonata</span></div>
+          <div class="info-card"><strong>14:00</strong><span>Т. Энхтуяа - Toyota Camry</span></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2026 DriveSchool.</p>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
