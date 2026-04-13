@@ -1,152 +1,251 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="mn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DriveSchool  Жолооны сургалтын систем</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Steppe Architect Driving Education</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "surface-container-highest": "#e0e3e5","surface-tint": "#425f8f","on-surface": "#191c1e","secondary-fixed-dim": "#6fd7d6","on-primary": "#ffffff","surface-container": "#eceef0","on-secondary-fixed": "#002020","primary-fixed-dim": "#abc7fe","on-background": "#191c1e","inverse-on-surface": "#eff1f3","tertiary": "#2f1100","surface-container-high": "#e6e8ea","on-primary-fixed-variant": "#294776","on-primary-fixed": "#001b3e","secondary": "#006a6a","on-error-container": "#93000a","on-secondary-container": "#007070","surface-variant": "#e0e3e5","on-secondary": "#ffffff","outline": "#747780","inverse-primary": "#abc7fe","on-tertiary-fixed-variant": "#6e3914","surface-container-low": "#f2f4f6","secondary-fixed": "#8cf3f3","on-secondary-fixed-variant": "#004f4f","error": "#ba1a1a","on-tertiary-fixed": "#321200","secondary-container": "#8cf3f3","primary-fixed": "#d6e3ff","tertiary-fixed": "#ffdbc9","on-surface-variant": "#43474f","background": "#f7f9fb","tertiary-fixed-dim": "#ffb68b","inverse-surface": "#2d3133","on-error": "#ffffff","outline-variant": "#c4c6d0","primary": "#00193b","error-container": "#ffdad6","tertiary-container": "#4f2100","on-primary-container": "#7a97cb","primary-container": "#0a2e5c","surface-bright": "#f7f9fb","on-tertiary-container": "#cb855a","surface-container-lowest": "#ffffff","on-tertiary": "#ffffff","surface-dim": "#d8dadc","surface": "#f7f9fb"
+      },
+      borderRadius: {"DEFAULT": "0.25rem","lg": "0.5rem","xl": "0.75rem","full": "9999px"},
+      fontFamily: {"headline": ["Manrope"],"body": ["Inter"],"label": ["Inter"]}
+    }
+  }
+}
+</script>
+<style>
+body { font-family: 'Inter', sans-serif; }
+h1, h2, h3, .headline { font-family: 'Manrope', sans-serif; letter-spacing: -0.04em; }
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.ambient-shadow { box-shadow: 0 20px 40px rgba(10, 46, 92, 0.06); }
+</style>
 </head>
-<body>
-  <div class="page-shell">
-    <nav class="topbar">
-      <a class="brand" href="index.html">DriveSchool</a>
-      <div class="nav-links">
-        <a href="index.html" class="nav-link active">Нүүр</a>
-        <a href="test.html" class="nav-link">Шалгалт</a>
-        <a href="contract.html" class="nav-link">Гэрээ</a>
-        <a href="book.html" class="nav-link">Ном</a>
-        <a href="booking.html" class="nav-link">Захиалга</a>
-      </div>
-      <button class="topbar-btn">Нэвтрэх</button>
-      <button class="theme-btn" type="button" aria-label="Тод/хар горим">🌙</button>
-    </nav>
-
-    <header class="hero" id="home">
-      <div class="hero-copy">
-        <span class="eyebrow">DriveSchool</span>
-        <h1>Жолооны сургалтыг ухаалгаар амжилттай дуусга.</h1>
-        <p>Сургалт, практик хичээл, тест болон гэрээг нэг дор удирдаж, машинтай холбоотой зургуудтай сайхан танилц.</p>
-        <div class="countdown-grid" aria-label="Countdown timer">
-          <div class="count-box"><span id="days">00</span><small>өдөр</small></div>
-          <div class="count-box"><span id="hours">00</span><small>цаг</small></div>
-          <div class="count-box"><span id="minutes">00</span><small>мин</small></div>
-          <div class="count-box"><span id="seconds">00</span><small>сек</small></div>
-        </div>
-        <div class="hero-actions">
-          <a href="booking.html" class="btn btn-primary">Захиалах</a>
-          <a href="login.html" class="btn btn-secondary">Нэвтрэх</a>
-        </div>
-        <p style="color: rgba(237,244,255,0.72); margin-top: 18px; max-width: 620px;">Админ, Багшийн хуудсууд руу орохын тулд эхлээд нэвтэрнэ үү.</p>
-      </div>
-
-      <div class="hero-visual">
-        <div class="hero-card">
-          <img src="https://images.unsplash.com/photo-1617132920255-6429331d1285?auto=format&fit=crop&w=900&q=80" alt="DriveSchool machine" />
-        </div>
-        <div class="hero-meta">
-          <div><strong>40+</strong><span>машин</span></div>
-          <div><strong>1.2k+</strong><span>сургалт</span></div>
-          <div><strong>98%</strong><span>амжилт</span></div>
-          <div><strong>Нэвтрэх</strong><span>Зөвхөн бүртгэлтэй хэрэглэгч</span></div>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 bg-slate-50/80 backdrop-blur-xl">
+  <nav class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+    <div class="text-xl font-bold tracking-tighter text-blue-900">Steppe Architect</div>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="text-blue-900 font-bold border-b-2 border-teal-600" href="index.html">Courses</a>
+      <a class="text-slate-600 font-medium hover:text-teal-600 transition-colors" href="index.html#instructors">Instructors</a>
+      <a class="text-slate-600 font-medium hover:text-teal-600 transition-colors" href="index.html#fleet">Fleet</a>
+      <a class="text-slate-600 font-medium hover:text-teal-600 transition-colors" href="index.html#about">About Us</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="login.html" class="px-5 py-2 text-blue-900 font-medium hover:opacity-80 transition-opacity">Login</a>
+      <a href="login.html" class="px-6 py-2 bg-primary text-on-primary rounded-xl font-bold transition-transform active:scale-95 duration-150">Register</a>
+    </div>
+  </nav>
+</header>
+<main>
+  <!-- Hero Section -->
+  <section class="relative min-h-[870px] flex items-center overflow-hidden bg-primary">
+    <div class="absolute inset-0 opacity-40">
+      <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1600&q=80" alt="Car on road"/>
+      <div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/40 to-transparent"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
+      <div class="max-w-2xl">
+        <span class="inline-block px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase mb-6">Standard of Excellence</span>
+        <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] mb-8">Жолооны соёлд шинэ стандарт</h1>
+        <p class="text-lg text-on-primary-container mb-10 max-w-lg font-medium leading-relaxed">Бид орчин үеийн техник технологи болон туршлагатай багш нарын тусламжтайгаар таныг мэргэжлийн жолооч болоход тусална.</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="login.html" class="px-8 py-4 bg-secondary text-on-secondary rounded-xl font-bold text-lg shadow-xl hover:scale-[1.02] active:scale-95 transition-all text-center">Одоо бүртгүүлэх</a>
+          <a href="student-dashboard.html" class="px-8 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-xl font-bold text-lg hover:bg-white/20 transition-all text-center">Сургалт үзэх</a>
         </div>
       </div>
-    </header>
+    </div>
+  </section>
 
-    <section class="section services" id="services">
-      <div class="section-head">
-        <p class="section-label">DriveSchool</p>
-        <h2>Таны замын найдвартай хамтрагч</h2>
+  <!-- Trust Metrics -->
+  <section class="py-16 bg-surface-container-low">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+        <div class="space-y-2"><div class="text-5xl font-extrabold text-primary tracking-tighter">98%</div><div class="text-sm font-semibold text-outline tracking-wider uppercase">Шалгалтын тэнцэл</div></div>
+        <div class="space-y-2"><div class="text-5xl font-extrabold text-primary tracking-tighter">1000+</div><div class="text-sm font-semibold text-outline tracking-wider uppercase">Төгсөгчид</div></div>
+        <div class="space-y-2"><div class="text-5xl font-extrabold text-primary tracking-tighter">15+</div><div class="text-sm font-semibold text-outline tracking-wider uppercase">Мэргэжлийн багш</div></div>
+        <div class="space-y-2"><div class="text-5xl font-extrabold text-primary tracking-tighter">24/7</div><div class="text-sm font-semibold text-outline tracking-wider uppercase">Дэмжлэг</div></div>
       </div>
-      <div class="card-grid">
-        <article class="glass-card">
-          <div class="card-icon">🚗</div>
-          <h3>Машин сургалт</h3>
-          <p>Мэргэжлийн багштай Toyota болон Hyundai машин дээр практик хичээл авч, замын нөхцөлд найдвартай жолоодох чадвар ол.</p>
-        </article>
-        <article class="glass-card">
-          <div class="card-icon">🧠</div>
-          <h3>Mock тест</h3>
-          <p>Онолын бодит тестүүдээр бэлдэж, үнэлгээ аван шалгалтын бэлтгэлээ сайжруул.</p>
-        </article>
-        <article class="glass-card">
-          <div class="card-icon">📝</div>
-          <h3>Гэрээ ба төлбөр</h3>
-          <p>Онлайн гэрээ үзэх, төлбөр төлөх, захиалгаа баталгаажуулах процессийг нэг дор гүйцэтгэх.</p>
-        </article>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section cars" id="cars">
-      <div class="section-head">
-        <p class="section-label">Drive Car</p>
-        <h2>Таны сургалтанд бэлэн машинууд</h2>
+  <!-- Features Section: Bento Grid -->
+  <section class="py-24 bg-surface" id="fleet">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-16">
+        <h2 class="text-4xl font-extrabold text-primary mb-4">Яагаад биднийг сонгох вэ?</h2>
+        <p class="text-outline text-lg max-w-xl">Бид сургалтын чанар болон суралцагчдын тав тухыг нэгдүгээрт тавьдаг.</p>
       </div>
-      <div class="car-grid">
-        <article class="car-card">
-          <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=900&q=80" alt="Toyota Camry" />
-          <div class="car-card-copy">
-            <h3>Toyota Camry</h3>
-            <p>Төвөггүй, тав тухтай сургалтын машин.</p>
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
+        <div class="md:col-span-8 bg-surface-container-lowest p-10 rounded-[2rem] flex flex-col justify-between overflow-hidden relative group ambient-shadow">
+          <div class="relative z-10">
+            <div class="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center text-on-primary-container mb-6">
+              <span class="material-symbols-outlined">diversity_3</span>
+            </div>
+            <h3 class="text-3xl font-bold text-primary mb-4" id="instructors">Мэргэжлийн багш нар</h3>
+            <p class="text-on-surface-variant max-w-md text-lg">10-аас дээш жилийн туршлагатай, сургах арга зүйн өндөр ур чадвартай багш хамт олон таныг хүлээж байна.</p>
           </div>
-        </article>
-        <article class="car-card">
-          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80" alt="Hyundai Sonata" />
-          <div class="car-card-copy">
-            <h3>Hyundai Sonata</h3>
-            <p>Шинэлэг, найдвартай жолоодлогын туршлага.</p>
+          <div class="absolute right-0 bottom-0 w-1/2 opacity-10 group-hover:opacity-20 transition-opacity">
+            <span class="material-symbols-outlined" style="font-size:12rem">school</span>
           </div>
-        </article>
-        <article class="car-card">
-          <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=900&q=80" alt="Driving lesson" />
-          <div class="car-card-copy">
-            <h3>Сургалтын багц</h3>
-            <p>Гурван төрлийн ур чадвар хөгжүүлэх сургалтын багц.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section booking" id="booking">
-      <div class="section-head">
-        <p class="section-label">Захиалга</p>
-        <h2>Дараагийн сургалтын цаг захиалах</h2>
-      </div>
-      <div class="booking-grid">
-        <div class="booking-panel glass-card">
-          <h3>Цаг захиалга</h3>
-          <p>Өдөр, багш, машин сонгох замаар дараагийн сургалтын хичээлдээ бэлд.</p>
-          <div class="booking-meta">
-            <div><span>Багш</span><strong>Б. Мөнхбаяр</strong></div>
-            <div><span>Машин</span><strong>Toyota Camry</strong></div>
-            <div><span>Өдөр</span><strong>2024.05.15</strong></div>
-          </div>
-          <a href="#contact" class="btn btn-primary">Захиалах</a>
         </div>
-        <div class="booking-preview">
-          <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=900&q=80" alt="Driving lesson preview" />
+        <div class="md:col-span-4 bg-secondary text-on-secondary p-10 rounded-[2rem] flex flex-col justify-between ambient-shadow">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center text-white mb-6">
+              <span class="material-symbols-outlined">schedule</span>
+            </div>
+            <h3 class="text-3xl font-bold mb-4">Уян хатан хуваарь</h3>
+            <p class="opacity-90">Өглөө, өдөр, оройн ээлжүүдээс сонгон өөрт тохиромжтой цагтаа суралцах боломжтой.</p>
+          </div>
+          <a href="booking.html" class="mt-8 py-3 px-6 bg-white text-secondary font-bold rounded-xl self-start hover:bg-opacity-90 transition-all">Хуваарь харах</a>
+        </div>
+        <div class="md:col-span-4 bg-surface-container-high p-10 rounded-[2rem] ambient-shadow">
+          <div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-on-secondary-container mb-6">
+            <span class="material-symbols-outlined">payments</span>
+          </div>
+          <h3 class="text-2xl font-bold text-primary mb-4">QPay Төлбөр</h3>
+          <p class="text-on-surface-variant text-sm">Төлбөрийн хялбар шийдэл. Хувааж төлөх нөхцөлтэйгөөр сургалтдаа хамрагдаарай.</p>
+        </div>
+        <div class="md:col-span-8 bg-primary text-white p-10 rounded-[2rem] relative overflow-hidden flex items-center ambient-shadow">
+          <div class="relative z-10 w-full md:w-1/2">
+            <h3 class="text-3xl font-bold mb-4">Орчин үеийн авто парк</h3>
+            <p class="opacity-80 mb-6 text-lg">Toyota Prius 20, Sonata 7 зэрэг сүүлийн үеийн тоноглогдсон автомашинууд дээр дадлага хийнэ.</p>
+            <div class="flex gap-2">
+              <span class="px-3 py-1 bg-white/10 rounded-lg text-xs font-bold border border-white/10">Prius 20</span>
+              <span class="px-3 py-1 bg-white/10 rounded-lg text-xs font-bold border border-white/10">Sonata 7</span>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section contact" id="contact">
-      <div class="contact-panel glass-card">
-        <h2>Холбоо барих</h2>
-        <p>DriveSchool-тэй холбогдож, сургалтын бүртгэлээ амархан хий.</p>
-        <div class="contact-grid">
-          <div><strong>Утас:</strong><p>+976 9900 1234</p></div>
-          <div><strong>Цагийн хуваарь:</strong><p>Даваа-Ням 09:0020:00</p></div>
-          <div><strong>Сургалтын төв:</strong><p>Сүхбаатар дүүрэг, Улаанбаатар</p></div>
+  <!-- Courses Section -->
+  <section class="py-24 bg-surface-container-low">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="flex justify-between items-end mb-16">
+        <div>
+          <h2 class="text-4xl font-extrabold text-primary mb-4">Сургалтын ангилал</h2>
+          <p class="text-outline text-lg">Таны хэрэгцээнд нийцсэн бүх төрлийн сургалтууд</p>
         </div>
       </div>
-    </section>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="group bg-surface-container-lowest rounded-[2rem] overflow-hidden ambient-shadow transition-transform hover:-translate-y-2">
+          <div class="h-64 overflow-hidden bg-slate-200">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&q=80" alt="B Category"/>
+          </div>
+          <div class="p-8">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-2xl font-bold text-primary">"B" Ангилал</h3>
+              <span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-lg font-bold text-sm">Суудлын тэрэг</span>
+            </div>
+            <p class="text-on-surface-variant mb-6 text-sm">Хөнгөн тэрэгний онол болон жолооны дадлага. 45 хоногийн сургалт.</p>
+            <div class="flex items-center justify-between pt-6 border-t border-surface-container">
+              <span class="text-xl font-extrabold text-primary">650,000 ₮</span>
+              <a href="login.html" class="flex items-center gap-2 text-secondary font-bold hover:underline underline-offset-4">Дэлгэрэнгүй <span class="material-symbols-outlined text-sm">east</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="group bg-surface-container-lowest rounded-[2rem] overflow-hidden ambient-shadow transition-transform hover:-translate-y-2">
+          <div class="h-64 overflow-hidden bg-slate-200">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=80" alt="BC Category"/>
+          </div>
+          <div class="p-8">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-2xl font-bold text-primary">"BC" Ангилал</h3>
+              <span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-lg font-bold text-sm">Мэргэшсэн</span>
+            </div>
+            <p class="text-on-surface-variant mb-6 text-sm">Ачааны болон суудлын тэрэг хосолсон мэргэжлийн сургалт. 60 хоногийн сургалт.</p>
+            <div class="flex items-center justify-between pt-6 border-t border-surface-container">
+              <span class="text-xl font-extrabold text-primary">850,000 ₮</span>
+              <a href="login.html" class="flex items-center gap-2 text-secondary font-bold hover:underline underline-offset-4">Дэлгэрэнгүй <span class="material-symbols-outlined text-sm">east</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="group bg-surface-container-lowest rounded-[2rem] overflow-hidden ambient-shadow transition-transform hover:-translate-y-2">
+          <div class="h-64 overflow-hidden bg-slate-200">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=600&q=80" alt="D Category"/>
+          </div>
+          <div class="p-8">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="text-2xl font-bold text-primary">"D" Ангилал</h3>
+              <span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-lg font-bold text-sm">Автобус</span>
+            </div>
+            <p class="text-on-surface-variant mb-6 text-sm">Олон нийтийн тээврийн хэрэгсэл жолоодох эрх. 30 хоногийн нэмэлт сургалт.</p>
+            <div class="flex items-center justify-between pt-6 border-t border-surface-container">
+              <span class="text-xl font-extrabold text-primary">450,000 ₮</span>
+              <a href="login.html" class="flex items-center gap-2 text-secondary font-bold hover:underline underline-offset-4">Дэлгэрэнгүй <span class="material-symbols-outlined text-sm">east</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer class="footer">
-      <p> 2026 DriveSchool. Бүх эрх хамгаалагдсан.</p>
-    </footer>
+  <!-- CTA -->
+  <section class="py-24 bg-surface" id="about">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="bg-primary rounded-[3rem] p-12 md:p-20 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12">
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+          <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-secondary rounded-full blur-[100px]"></div>
+        </div>
+        <div class="relative z-10 text-center md:text-left">
+          <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Жолооч болоход бэлэн үү?</h2>
+          <p class="text-on-primary-container text-lg max-w-md">Өнөөдөр бүртгүүлээд эхний хичээлээ үнэгүй аваарай.</p>
+        </div>
+        <div class="relative z-10 w-full max-w-md">
+          <div class="flex flex-col gap-4">
+            <input class="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="Таны утасны дугаар" type="text"/>
+            <a href="login.html" class="w-full px-6 py-4 bg-secondary text-on-secondary font-bold rounded-xl text-lg hover:scale-[1.02] active:scale-95 transition-all text-center block">Надад залгаарай</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-slate-100 py-12">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 max-w-7xl mx-auto">
+    <div class="space-y-6">
+      <div class="text-lg font-bold tracking-tighter text-blue-900">Steppe Architect</div>
+      <p class="text-slate-500 text-sm leading-relaxed">Бид Монголын хамгийн чанартай, орчин үеийн жолооны сургалтын төв байхаар зорин ажиллаж байна.</p>
+    </div>
+    <div>
+      <h4 class="font-bold text-primary mb-6 uppercase text-xs tracking-widest">Холбоос</h4>
+      <ul class="space-y-4">
+        <li><a class="text-slate-500 text-sm hover:underline" href="login.html">Login / Register</a></li>
+        <li><a class="text-slate-500 text-sm hover:underline" href="student-dashboard.html">Student Dashboard</a></li>
+        <li><a class="text-slate-500 text-sm hover:underline" href="booking.html">Book a Lesson</a></li>
+        <li><a class="text-slate-500 text-sm hover:underline" href="mock-test.html">Mock Tests</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold text-primary mb-6 uppercase text-xs tracking-widest">Хаяг</h4>
+      <p class="text-slate-500 text-sm mb-4">Улаанбаатар хот, Сүхбаатар дүүрэг, 8-р хороо</p>
+      <p class="text-slate-500 text-sm">Утас: +976 7000-0000</p>
+    </div>
+    <div>
+      <h4 class="font-bold text-primary mb-6 uppercase text-xs tracking-widest">Төлбөр</h4>
+      <div class="bg-surface-container p-4 rounded-xl flex items-center gap-4">
+        <span class="material-symbols-outlined text-secondary">qr_code_2</span>
+        <div>
+          <div class="text-xs font-bold text-primary">QPay Available</div>
+          <div class="text-[10px] text-slate-500">Scan to pay instantly</div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <script src="app.js"></script>
+  <div class="mt-12 pt-8 border-t border-slate-200 max-w-7xl mx-auto px-8 flex justify-between items-center">
+    <p class="text-slate-500 text-xs">© 2024 Steppe Architect Driving Education. All rights reserved.</p>
+  </div>
+</footer>
 </body>
 </html>

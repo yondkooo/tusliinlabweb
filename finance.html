@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Санхүүгийн удирдлага | Steppe Architect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-highest":"#e0e3e5","on-primary":"#ffffff","surface-container":"#eceef0","secondary":"#006a6a","on-secondary":"#ffffff","outline":"#747780","surface-container-low":"#f2f4f6","error":"#ba1a1a","secondary-container":"#8cf3f3","primary-fixed":"#d6e3ff","on-surface-variant":"#43474f","background":"#f7f9fb","outline-variant":"#c4c6d0","primary":"#00193b","on-primary-container":"#7a97cb","primary-container":"#0a2e5c","surface-container-lowest":"#ffffff","surface":"#f7f9fb","on-surface":"#191c1e","error-container":"#ffdad6","on-error-container":"#93000a","surface-container-high":"#e6e8ea","on-secondary-container":"#007070"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},fontFamily:{"headline":["Manrope"],"body":["Inter"]}}}}
+</script>
+<style>
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+.editorial-header{letter-spacing:-0.04em;}
+.ambient-shadow{box-shadow:0 20px 40px rgba(10,46,92,0.06);}
+body{font-family:'Inter',sans-serif;}
+h1,h2,h3{font-family:'Manrope',sans-serif;}
+</style>
+</head>
+<body class="bg-background font-body text-on-background min-h-screen">
+
+<aside class="h-screen w-64 fixed left-0 top-0 z-50 bg-slate-100 flex flex-col p-4 gap-2 ambient-shadow">
+  <div class="mb-8 px-2"><h1 class="text-lg font-black tracking-tight text-blue-950 font-headline">Steppe Admin</h1><p class="text-xs text-slate-500 font-medium">Driving Education v2.0</p></div>
+  <nav class="flex-grow space-y-1" id="sidebar-nav"></nav>
+  <div class="mt-auto pt-4 space-y-1">
+    <button class="w-full flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-200/60 rounded-xl"><span class="material-symbols-outlined">support_agent</span><span class="text-sm font-medium">Support</span></button>
+    <a href="login.html" class="w-full flex items-center gap-3 px-4 py-3 text-red-600 hover:bg-red-50 rounded-xl"><span class="material-symbols-outlined">logout</span><span class="text-sm font-medium">Logout</span></a>
+  </div>
+</aside>
+
+<main class="ml-64 min-h-screen">
+  <header class="flex justify-between items-center w-full px-8 py-3 h-16 bg-slate-50/80 backdrop-blur-xl sticky top-0 z-40">
+    <div class="flex items-center gap-8">
+      <h2 class="text-xl font-bold tracking-tighter text-blue-900 font-headline">Санхүүгийн удирдлага</h2>
+      <div class="relative w-64">
+        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+        <input class="w-full pl-10 pr-4 py-1.5 bg-surface-container-lowest border-none rounded-xl text-sm focus:ring-2 focus:ring-primary/20" placeholder="Гүйлгээ хайх..." type="text"/>
+      </div>
+    </div>
+    <div class="flex items-center gap-4">
+      <button class="p-2 text-slate-500 hover:bg-slate-200/50 rounded-full"><span class="material-symbols-outlined">notifications</span></button>
+      <div class="h-8 w-8 rounded-full overflow-hidden ml-2 bg-primary-fixed"><img src="https://i.pravatar.cc/150?img=5" class="w-full h-full object-cover" alt="User"/></div>
+    </div>
+  </header>
+
+  <div class="p-8 max-w-7xl mx-auto space-y-8">
+    <!-- Hero Stats -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="md:col-span-2 bg-primary p-8 rounded-xl text-white flex flex-col justify-between relative overflow-hidden">
+        <div class="relative z-10">
+          <p class="text-on-primary-container font-medium text-sm mb-1 uppercase tracking-wider">Үлдэгдэл төлбөр</p>
+          <h3 class="text-5xl font-extrabold font-headline editorial-header">1,250,000₮</h3>
+          <p class="mt-4 text-primary-fixed-dim text-sm opacity-80 max-w-md" style="color:#abc7fe;">Сургалтын төлбөрийн үлдэгдэл. Сүүлийн төлөх хугацаа: 2024.11.30</p>
+        </div>
+        <div class="mt-8 flex gap-3 relative z-10">
+          <button onclick="showQPayModal()" class="px-6 py-2.5 bg-secondary text-white rounded-xl font-bold text-sm hover:opacity-90 flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg">account_balance_wallet</span>Төлбөр төлөх
+          </button>
+          <button class="px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-xl font-bold text-sm backdrop-blur-md">Дэлгэрэнгүй</button>
+        </div>
+        <div class="absolute right-0 bottom-0 opacity-10 translate-x-1/4 translate-y-1/4"><span class="material-symbols-outlined" style="font-size:240px">payments</span></div>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-xl ambient-shadow flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 bg-secondary-container rounded-xl flex items-center justify-center text-on-secondary-container mb-4"><span class="material-symbols-outlined">check_circle</span></div>
+          <p class="text-slate-500 font-medium text-sm mb-1">Нийт төлсөн</p>
+          <h3 class="text-3xl font-bold font-headline editorial-header text-blue-900">4,800,000₮</h3>
+        </div>
+        <div class="mt-6 pt-6 border-t border-slate-100">
+          <div class="flex items-center justify-between"><span class="text-xs text-slate-500">Нийт гүйцэтгэл:</span><span class="text-sm font-bold text-secondary">82%</span></div>
+          <div class="w-full bg-slate-100 h-1.5 rounded-full mt-2 overflow-hidden"><div class="bg-secondary h-full rounded-full" style="width:82%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+      <!-- Transaction History -->
+      <div class="lg:col-span-2 space-y-6">
+        <div class="flex items-center justify-between px-2"><h4 class="text-lg font-bold text-blue-950 font-headline">Гүйлгээний түүх</h4><button class="text-sm text-primary font-bold hover:underline">Бүгдийг харах</button></div>
+        <div class="bg-surface-container-lowest rounded-xl ambient-shadow overflow-hidden">
+          <div class="divide-y divide-slate-50">
+            <div class="p-6 flex items-center justify-between hover:bg-slate-50/50 transition-colors">
+              <div class="flex items-center gap-4"><div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-blue-900"><span class="material-symbols-outlined">receipt_long</span></div><div><p class="font-bold text-blue-950 text-sm">Сургалтын төлбөр #0042</p><p class="text-xs text-slate-500">2024.10.15 • QPay</p></div></div>
+              <div class="text-right flex items-center gap-6"><div><p class="font-bold text-blue-950 text-sm">850,000₮</p><p class="text-[10px] text-secondary font-bold uppercase">Амжилттай</p></div><button onclick="downloadReceipt()" class="p-2 text-slate-400 hover:text-primary"><span class="material-symbols-outlined">download</span></button></div>
+            </div>
+            <div class="p-6 flex items-center justify-between hover:bg-slate-50/50 transition-colors">
+              <div class="flex items-center gap-4"><div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-blue-900"><span class="material-symbols-outlined">account_balance</span></div><div><p class="font-bold text-blue-950 text-sm">Банкны шилжүүлэг</p><p class="text-xs text-slate-500">2024.09.12 • Хаан Банк</p></div></div>
+              <div class="text-right flex items-center gap-6"><div><p class="font-bold text-blue-950 text-sm">1,200,000₮</p><p class="text-[10px] text-secondary font-bold uppercase">Амжилттай</p></div><button onclick="downloadReceipt()" class="p-2 text-slate-400 hover:text-primary"><span class="material-symbols-outlined">download</span></button></div>
+            </div>
+            <div class="p-6 flex items-center justify-between hover:bg-slate-50/50 transition-colors">
+              <div class="flex items-center gap-4"><div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-blue-900"><span class="material-symbols-outlined">history_edu</span></div><div><p class="font-bold text-blue-950 text-sm">Шалигалтын хураамж</p><p class="text-xs text-slate-500">2024.08.30 • QPay</p></div></div>
+              <div class="text-right flex items-center gap-6"><div><p class="font-bold text-blue-950 text-sm">45,000₮</p><p class="text-[10px] text-secondary font-bold uppercase">Амжилттай</p></div><button onclick="downloadReceipt()" class="p-2 text-slate-400 hover:text-primary"><span class="material-symbols-outlined">download</span></button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="space-y-6">
+        <div class="bg-surface-container-low p-6 rounded-xl space-y-4">
+          <h4 class="text-sm font-bold text-blue-950 uppercase tracking-wider">Төлбөрийн хэрэгсэл</h4>
+          <div class="space-y-3">
+            <button onclick="showQPayModal()" class="w-full flex items-center justify-between p-4 bg-white rounded-xl border border-transparent hover:border-secondary transition-all group">
+              <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-[#006A6A] flex items-center justify-center text-white font-bold text-xs">Q</div><span class="text-sm font-semibold text-blue-950">QPay Төлөлт</span></div>
+              <span class="material-symbols-outlined text-slate-300 group-hover:text-secondary">chevron_right</span>
+            </button>
+            <button onclick="showBankModal()" class="w-full flex items-center justify-between p-4 bg-white rounded-xl border border-transparent hover:border-secondary transition-all group">
+              <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-white"><span class="material-symbols-outlined text-sm">account_balance</span></div><span class="text-sm font-semibold text-blue-950">Банкны шилжүүлэг</span></div>
+              <span class="material-symbols-outlined text-slate-300 group-hover:text-secondary">chevron_right</span>
+            </button>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest p-6 rounded-xl ambient-shadow border border-slate-100">
+          <h4 class="text-sm font-bold text-blue-950 mb-4">Баримтжуулалт</h4>
+          <div class="p-4 bg-slate-50 rounded-xl mb-4 flex items-center gap-3">
+            <span class="material-symbols-outlined text-red-500">picture_as_pdf</span>
+            <div><p class="text-xs font-bold text-blue-950">2024_Сурлагын_төлбөр.pdf</p><p class="text-[10px] text-slate-400">1.2 MB • PDF</p></div>
+          </div>
+          <button onclick="downloadReceipt()" class="w-full py-2.5 border border-slate-200 text-blue-950 font-bold text-sm rounded-xl hover:bg-slate-50 flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-lg">download_for_offline</span>Бүх баримтыг татах
+          </button>
+        </div>
+        <div class="p-4 rounded-xl border border-dashed border-slate-300">
+          <p class="text-xs text-slate-500 italic">Төлбөрийн талаар асуух зүйл гарвал санхүүгийн албатай холбогдоно уу. 7700-1234</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<!-- QPay Modal -->
+<div id="qpayModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+  <div class="bg-white rounded-2xl p-8 max-w-sm w-full text-center">
+    <div class="w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center mx-auto mb-4"><span class="material-symbols-outlined text-white text-3xl">qr_code_2</span></div>
+    <h3 class="text-xl font-bold text-primary mb-2">QPay Төлбөр</h3>
+    <p class="text-slate-500 text-sm mb-6">QR кодыг уншуулж 1,250,000₮ төлнө үү</p>
+    <div class="w-40 h-40 bg-slate-100 rounded-xl mx-auto mb-6 flex items-center justify-center">
+      <span class="material-symbols-outlined text-slate-400" style="font-size:80px">qr_code</span>
+    </div>
+    <div class="flex gap-3">
+      <button onclick="confirmPayment()" class="flex-1 py-3 bg-secondary text-white font-bold rounded-xl hover:opacity-90">Төлбөр баталгаажсан</button>
+      <button onclick="document.getElementById('qpayModal').classList.add('hidden')" class="px-4 py-3 bg-slate-100 text-slate-600 font-bold rounded-xl">Хаах</button>
+    </div>
+  </div>
+</div>
+
+<!-- Bank Modal -->
+<div id="bankModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+  <div class="bg-white rounded-2xl p-8 max-w-md w-full">
+    <h3 class="text-xl font-bold text-primary mb-6">Банкны шилжүүлэг</h3>
+    <div class="space-y-4 bg-slate-50 p-6 rounded-xl mb-6">
+      <div class="flex justify-between"><span class="text-sm text-slate-500">Банк:</span><span class="font-bold text-primary">Хаан Банк</span></div>
+      <div class="flex justify-between"><span class="text-sm text-slate-500">Дансны дугаар:</span><span class="font-bold text-primary">5000 1234 5678</span></div>
+      <div class="flex justify-between"><span class="text-sm text-slate-500">Хүлээн авагч:</span><span class="font-bold text-primary">Steppe Architect LLC</span></div>
+      <div class="flex justify-between"><span class="text-sm text-slate-500">Дүн:</span><span class="font-bold text-secondary">1,250,000₮</span></div>
+    </div>
+    <div class="flex gap-3">
+      <button onclick="confirmPayment()" class="flex-1 py-3 bg-primary text-white font-bold rounded-xl hover:opacity-90">Баталгаажуулах</button>
+      <button onclick="document.getElementById('bankModal').classList.add('hidden')" class="px-4 py-3 bg-slate-100 text-slate-600 font-bold rounded-xl">Хаах</button>
+    </div>
+  </div>
+</div>
+
+<script src="shared-sidebar.js"></script>
+<script>
+renderSidebar('payments');
+function showQPayModal() { document.getElementById('qpayModal').classList.remove('hidden'); }
+function showBankModal() { document.getElementById('bankModal').classList.remove('hidden'); }
+function confirmPayment() {
+  document.getElementById('qpayModal').classList.add('hidden');
+  document.getElementById('bankModal').classList.add('hidden');
+  alert('Төлбөр амжилттай баталгааджлаа! Баярлалаа.');
+}
+function downloadReceipt() { alert('Баримт татагдаж байна...'); }
+</script>
+</body>
+</html>

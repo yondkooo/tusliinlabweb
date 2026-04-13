@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Бичиг баримт | Steppe Architect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-highest":"#e0e3e5","on-primary":"#ffffff","surface-container":"#eceef0","secondary":"#006a6a","on-secondary":"#ffffff","outline":"#747780","surface-container-low":"#f2f4f6","error":"#ba1a1a","secondary-container":"#8cf3f3","primary-fixed":"#d6e3ff","on-surface-variant":"#43474f","background":"#f7f9fb","outline-variant":"#c4c6d0","primary":"#00193b","on-primary-container":"#7a97cb","primary-container":"#0a2e5c","surface-container-lowest":"#ffffff","surface":"#f7f9fb","on-surface":"#191c1e","surface-container-high":"#e6e8ea","on-secondary-container":"#007070","primary-fixed-dim":"#abc7fe"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},fontFamily:{"headline":["Manrope"],"body":["Inter"]}}}}
+</script>
+<style>
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+body{font-family:'Inter',sans-serif;}
+h1,h2,h3{font-family:'Manrope',sans-serif;}
+</style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex">
+
+<aside class="bg-slate-100 h-screen w-64 fixed left-0 top-0 z-50 flex flex-col h-full p-4 gap-2 hidden md:flex" style="box-shadow:0 20px 40px rgba(10,46,92,0.06);">
+  <div class="mb-8 px-2"><h1 class="text-lg font-black tracking-tight text-blue-950">Steppe Admin</h1><p class="text-[0.7rem] text-slate-500 font-medium uppercase tracking-wider">Driving Education v2.0</p></div>
+  <nav class="flex-1 flex flex-col gap-1" id="sidebar-nav"></nav>
+  <div class="mt-auto flex flex-col gap-1 pt-4 border-t border-slate-200">
+    <a href="#" class="text-slate-600 hover:bg-slate-200/60 rounded-xl flex items-center gap-3 px-4 py-3 text-sm font-medium"><span class="material-symbols-outlined">support_agent</span>Support</a>
+    <a href="login.html" class="text-slate-600 hover:bg-slate-200/60 rounded-xl flex items-center gap-3 px-4 py-3 text-sm font-medium"><span class="material-symbols-outlined">logout</span>Logout</a>
+  </div>
+</aside>
+
+<main class="flex-1 md:ml-64 min-h-screen">
+  <header class="bg-slate-50/80 backdrop-blur-xl flex justify-between items-center w-full px-6 py-3 h-16 sticky top-0 z-40">
+    <div class="flex items-center gap-4">
+      <h2 class="text-xl font-bold tracking-tighter text-blue-900">Бичиг баримт</h2>
+      <div class="hidden lg:flex items-center bg-surface-container px-3 py-1.5 rounded-xl gap-2 w-64">
+        <span class="material-symbols-outlined text-outline text-sm">search</span>
+        <input class="bg-transparent border-none focus:ring-0 text-sm p-0 w-full placeholder:text-outline" placeholder="Хайх..." type="text"/>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <button class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-slate-200/50"><span class="material-symbols-outlined">notifications</span></button>
+      <div class="w-8 h-8 rounded-full overflow-hidden bg-primary-fixed"><img src="https://i.pravatar.cc/150?img=5" class="w-full h-full object-cover" alt="User"/></div>
+    </div>
+  </header>
+
+  <div class="p-6 lg:p-10 max-w-7xl mx-auto space-y-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div class="space-y-1">
+        <h1 class="text-3xl lg:text-4xl font-extrabold tracking-tight text-primary">Бичиг баримтын сан</h1>
+        <p class="text-on-surface-variant font-medium">Сургалтын гэрээ болон шаардлагатай материалыг эндээс удирдана уу.</p>
+      </div>
+      <div class="flex items-center gap-3 bg-secondary-container/30 px-4 py-2 rounded-xl">
+        <span class="material-symbols-outlined text-secondary" style="font-variation-settings:'FILL' 1;">verified</span>
+        <div><p class="text-[0.7rem] uppercase font-bold text-secondary tracking-widest">Төлөв</p><p class="text-sm font-bold text-primary">Баталгаажсан суралцагч</p></div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <!-- Contract -->
+      <section class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-8 space-y-6 relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-8 opacity-10"><span class="material-symbols-outlined" style="font-size:120px">gavel</span></div>
+        <div class="relative z-10 space-y-4">
+          <div class="inline-flex bg-primary-container text-on-primary-container px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider">Гэрээний төсөл v1.2</div>
+          <h2 class="text-2xl font-extrabold text-primary tracking-tight leading-tight">Жолооны сургалтын үндсэн гэрээ</h2>
+          <p class="text-on-surface-variant max-w-xl">Таны сургалтын үйл явц болон хариуцлагыг зохицуулах үндсэн баримт бичиг. Цахимаар гарын үсэг зурснаар хүчин төгөлдөр болно.</p>
+          <div class="flex flex-col sm:flex-row items-center gap-4 pt-4">
+            <button onclick="showSignModal()" class="w-full sm:w-auto bg-primary text-on-primary px-8 py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 active:scale-95">
+              <span class="material-symbols-outlined">draw</span>Гэрээг үзэх, зурах
+            </button>
+            <button onclick="downloadDoc()" class="w-full sm:w-auto bg-surface-container-high text-primary px-6 py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-surface-container-highest">
+              <span class="material-symbols-outlined">download</span>PDF татах
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- Upload Status -->
+      <section class="lg:col-span-4 bg-surface-container-low rounded-xl p-6 flex flex-col gap-6">
+        <h3 class="text-lg font-extrabold text-primary tracking-tight">Шаардлагатай файлууд</h3>
+        <div class="space-y-3">
+          <div class="bg-surface-container-lowest p-4 rounded-xl flex items-center justify-between">
+            <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center"><span class="material-symbols-outlined">id_card</span></div><div><p class="text-sm font-bold text-primary">Иргэний үнэмлэх</p><p class="text-[0.7rem] text-secondary font-semibold uppercase">Баталгаажсан</p></div></div>
+            <span class="material-symbols-outlined text-secondary" style="font-variation-settings:'FILL' 1;">check_circle</span>
+          </div>
+          <div class="bg-surface-container-lowest p-4 rounded-xl flex items-center justify-between">
+            <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center"><span class="material-symbols-outlined">medical_information</span></div><div><p class="text-sm font-bold text-primary">Эрүүл мэндийн хуудас</p><p class="text-[0.7rem] text-on-surface-variant font-medium">Шалгагдаж байна...</p></div></div>
+            <div class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse"></div>
+          </div>
+          <div onclick="uploadPhoto()" class="bg-white border-2 border-dashed border-outline-variant p-4 rounded-xl flex flex-col items-center justify-center gap-2 group hover:border-primary transition-colors cursor-pointer">
+            <span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">add_a_photo</span>
+            <p class="text-[0.7rem] font-bold text-outline group-hover:text-primary uppercase tracking-tighter">Цээж зураг оруулах</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Documents Table -->
+      <section class="lg:col-span-12 space-y-6 pt-6">
+        <div class="flex items-center justify-between">
+          <h2 class="text-2xl font-extrabold text-primary tracking-tight">Төлбөрийн баримт &amp; Сертификат</h2>
+          <button class="text-sm font-bold text-secondary flex items-center gap-1 hover:underline">Бүгдийг үзэх <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+        </div>
+        <div class="overflow-hidden bg-surface-container-lowest rounded-xl">
+          <table class="w-full text-left border-collapse">
+            <thead class="bg-surface-container-low border-b border-surface-container"><tr><th class="px-6 py-4 text-[0.75rem] font-extrabold text-primary uppercase tracking-wider">Баримтын нэр</th><th class="px-6 py-4 text-[0.75rem] font-extrabold text-primary uppercase tracking-wider">Огноо</th><th class="px-6 py-4 text-[0.75rem] font-extrabold text-primary uppercase tracking-wider">Төрөл</th><th class="px-6 py-4 text-[0.75rem] font-extrabold text-primary uppercase tracking-wider text-right">Үйлдэл</th></tr></thead>
+            <tbody class="divide-y divide-surface-container">
+              <tr class="hover:bg-surface-container-low/50 transition-colors"><td class="px-6 py-5"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-outline">receipt_long</span><span class="text-sm font-bold text-primary">Сургалтын төлбөр - I шат</span></div></td><td class="px-6 py-5"><span class="text-sm text-on-surface-variant font-medium">2023.10.15</span></td><td class="px-6 py-5"><span class="px-2.5 py-1 rounded-lg bg-surface-container text-primary text-[0.7rem] font-bold uppercase">QPay Баримт</span></td><td class="px-6 py-5 text-right"><button onclick="downloadDoc()" class="p-2 rounded-lg text-primary hover:bg-primary/10"><span class="material-symbols-outlined">download</span></button></td></tr>
+              <tr class="hover:bg-surface-container-low/50 transition-colors"><td class="px-6 py-5"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary" style="font-variation-settings:'FILL' 1;">workspace_premium</span><span class="text-sm font-bold text-primary">Онолын сургалтын сертификат</span></div></td><td class="px-6 py-5"><span class="text-sm text-on-surface-variant font-medium">2023.11.02</span></td><td class="px-6 py-5"><span class="px-2.5 py-1 rounded-lg bg-secondary-container text-on-secondary-container text-[0.7rem] font-bold uppercase">Гэрчилгээ</span></td><td class="px-6 py-5 text-right"><button onclick="downloadDoc()" class="p-2 rounded-lg text-primary hover:bg-primary/10"><span class="material-symbols-outlined">download</span></button></td></tr>
+              <tr class="hover:bg-surface-container-low/50 transition-colors"><td class="px-6 py-5"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-outline">description</span><span class="text-sm font-bold text-primary">Моторын тосны засвар - Соната 7</span></div></td><td class="px-6 py-5"><span class="text-sm text-on-surface-variant font-medium">2023.11.10</span></td><td class="px-6 py-5"><span class="px-2.5 py-1 rounded-lg bg-surface-container text-primary text-[0.7rem] font-bold uppercase">Техник үйлчилгээ</span></td><td class="px-6 py-5 text-right"><button onclick="downloadDoc()" class="p-2 rounded-lg text-primary hover:bg-primary/10"><span class="material-symbols-outlined">download</span></button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <footer class="flex flex-col md:flex-row items-center justify-between gap-4 py-8 border-t border-surface-container mt-10">
+      <div class="flex items-center gap-4"><div class="bg-primary-container/20 p-2 rounded-lg"><span class="material-symbols-outlined text-primary text-xl">security</span></div><div><p class="text-xs font-bold text-primary">Мэдээллийн аюулгүй байдал</p><p class="text-[0.65rem] text-on-surface-variant uppercase tracking-widest">AES-256 Шифрлэлтээр хамгаалагдсан</p></div></div>
+      <p class="text-xs text-on-surface-variant font-medium">© 2024 Steppe Architect. Driving Education v2.0</p>
+    </footer>
+  </div>
+</main>
+
+<!-- Mobile Bottom Nav -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-100 flex justify-around items-center py-2 z-50">
+  <a href="student-dashboard.html" class="flex flex-col items-center gap-1 text-slate-500 p-2"><span class="material-symbols-outlined">dashboard</span><span class="text-[10px] font-bold">Хяналт</span></a>
+  <a href="documents.html" class="flex flex-col items-center gap-1 text-blue-900 p-2"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">description</span><span class="text-[10px] font-bold">Бичиг</span></a>
+  <a href="booking.html" class="flex flex-col items-center gap-1 text-slate-500 p-2"><span class="material-symbols-outlined">calendar_month</span><span class="text-[10px] font-bold">Хуваарь</span></a>
+  <a href="#" class="flex flex-col items-center gap-1 text-slate-500 p-2"><span class="material-symbols-outlined">settings</span><span class="text-[10px] font-bold">Тохиргоо</span></a>
+</nav>
+
+<!-- Sign Modal -->
+<div id="signModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+  <div class="bg-white rounded-2xl p-8 max-w-lg w-full">
+    <h3 class="text-xl font-bold text-primary mb-4">Гэрээнд гарын үсэг зурах</h3>
+    <p class="text-sm text-slate-500 mb-6">Та доорх хайрцагт гарын үсгээ зурна уу:</p>
+    <canvas id="signCanvas" class="w-full h-40 border-2 border-dashed border-outline-variant rounded-xl bg-slate-50" style="touch-action:none;"></canvas>
+    <div class="flex gap-3 mt-6">
+      <button onclick="clearSignature()" class="flex-1 py-3 bg-slate-100 text-slate-600 font-bold rounded-xl hover:bg-slate-200">Арилгах</button>
+      <button onclick="confirmSignature()" class="flex-1 py-3 bg-primary text-white font-bold rounded-xl hover:opacity-90">Баталгаажуулах</button>
+      <button onclick="document.getElementById('signModal').classList.add('hidden')" class="px-4 py-3 bg-slate-100 text-slate-600 font-bold rounded-xl">Хаах</button>
+    </div>
+  </div>
+</div>
+
+<script src="shared-sidebar.js"></script>
+<script>
+renderSidebar('documents');
+
+function showSignModal() {
+  document.getElementById('signModal').classList.remove('hidden');
+  initCanvas();
+}
+
+function downloadDoc() { alert('Баримт татагдаж байна...'); }
+function uploadPhoto() { alert('Зураг оруулах боломж'); }
+function confirmSignature() { document.getElementById('signModal').classList.add('hidden'); alert('Гэрээнд амжилттай гарын үсэг зурлаа!'); }
+function clearSignature() { const c = document.getElementById('signCanvas'); c.getContext('2d').clearRect(0,0,c.width,c.height); }
+
+function initCanvas() {
+  const canvas = document.getElementById('signCanvas');
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+  const ctx = canvas.getContext('2d');
+  let drawing = false;
+  canvas.addEventListener('mousedown', e => { drawing = true; ctx.beginPath(); ctx.moveTo(e.offsetX, e.offsetY); });
+  canvas.addEventListener('mousemove', e => { if(!drawing) return; ctx.lineTo(e.offsetX, e.offsetY); ctx.strokeStyle = '#00193b'; ctx.lineWidth = 2; ctx.stroke(); });
+  canvas.addEventListener('mouseup', () => drawing = false);
+}
+</script>
+</body>
+</html>

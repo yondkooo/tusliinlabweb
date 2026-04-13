@@ -1,55 +1,157 @@
 <!DOCTYPE html>
 <html lang="mn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DriveSchool — Багшийн Dashboard</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Steppe Architect | Багшийн Хяналтын Самбар</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-highest":"#e0e3e5","on-primary":"#ffffff","surface-container":"#eceef0","on-background":"#191c1e","secondary":"#006a6a","on-secondary":"#ffffff","outline":"#747780","surface-container-low":"#f2f4f6","secondary-fixed":"#8cf3f3","error":"#ba1a1a","secondary-container":"#8cf3f3","primary-fixed":"#d6e3ff","on-surface-variant":"#43474f","background":"#f7f9fb","outline-variant":"#c4c6d0","primary":"#00193b","on-primary-container":"#7a97cb","primary-container":"#0a2e5c","surface-container-lowest":"#ffffff","on-tertiary":"#ffffff","surface":"#f7f9fb","error-container":"#ffdad6","on-error-container":"#93000a","secondary-fixed-dim":"#6fd7d6","on-secondary-fixed":"#002020","primary-fixed-dim":"#abc7fe","tertiary":"#2f1100","surface-container-high":"#e6e8ea","on-primary-fixed-variant":"#294776","on-primary-fixed":"#001b3e","on-error":"#ffffff","on-secondary-container":"#007070","surface-variant":"#e0e3e5","on-secondary-fixed-variant":"#004f4f","on-tertiary-fixed":"#321200","tertiary-fixed":"#ffdbc9","on-surface":"#191c1e","tertiary-fixed-dim":"#ffb68b","inverse-surface":"#2d3133","on-tertiary-container":"#cb855a","surface-dim":"#d8dadc","tertiary-container":"#4f2100","surface-bright":"#f7f9fb","inverse-on-surface":"#eff1f3","inverse-primary":"#abc7fe","on-tertiary-fixed-variant":"#6e3914","surface-tint":"#425f8f"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},fontFamily:{"headline":["Manrope"],"body":["Inter"],"label":["Inter"]}}}}
+</script>
+<style>
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+body{font-family:'Inter',sans-serif;}
+h1,h2,h3,.brand-font{font-family:'Manrope',sans-serif;}
+</style>
 </head>
-<body>
-  <div class="page-shell">
-    <nav class="topbar">
-      <a class="brand" href="index.html">DriveSchool</a>
-      <div class="nav-links">
-        <a href="index.html" class="nav-link">Нүүр</a>
-        <a href="test.html" class="nav-link">Шалгалт</a>
-        <a href="contract.html" class="nav-link">Гэрээ</a>
-        <a href="book.html" class="nav-link">Ном</a>
-        <a href="booking.html" class="nav-link">Захиалга</a>
-        <a href="teacher-dashboard.html" class="nav-link active">Багш</a>
-      </div>
-      <button class="topbar-btn">Тусламж</button>
-      <button class="theme-btn" type="button" aria-label="Тод/хар горим">🌙</button>
-    </nav>
+<body class="bg-background text-on-background min-h-screen">
 
-    <section class="section">
-      <div class="page-header">
-        <h1>Багшийн самбар</h1>
-        <p>Өнөөдрийн хичээл, сурагчдын захиалга болон санал хүсэлтээс хянах.</p>
+<aside class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 z-50 bg-slate-100 p-4 gap-2" style="box-shadow:0 20px 40px rgba(10,46,92,0.06);">
+  <div class="mb-8 px-2">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-container">architecture</span></div>
+      <div>
+        <h1 class="text-lg font-black tracking-tight text-blue-950 leading-tight">Steppe Admin</h1>
+        <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Driving Education v2.0</p>
       </div>
+    </div>
+  </div>
+  <nav class="flex-1 flex flex-col gap-1" id="sidebar-nav"></nav>
+  <div class="mt-auto pt-4 flex flex-col gap-1 border-t border-slate-200">
+    <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-200/60 rounded-xl"><span class="material-symbols-outlined">support_agent</span><span class="text-sm">Support</span></a>
+    <a href="login.html" class="flex items-center gap-3 px-4 py-3 text-error hover:bg-error-container/20 rounded-xl"><span class="material-symbols-outlined">logout</span><span class="text-sm">Logout</span></a>
+  </div>
+</aside>
 
-      <div class="dashboard-grid">
-        <div class="dashboard-card"><strong>8</strong><span>Захиалгатай сурагч</span></div>
-        <div class="dashboard-card"><strong>6</strong><span>Өнөөдрийн цаг</span></div>
-        <div class="dashboard-card"><strong>4.9</strong><span>Дундаж үнэлгээ</span></div>
+<main class="md:ml-64 min-h-screen">
+  <header class="sticky top-0 z-40 bg-slate-50/80 backdrop-blur-xl flex justify-between items-center w-full px-6 py-3 h-16">
+    <div class="flex items-center gap-4 flex-1">
+      <div class="relative w-full max-w-md">
+        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+        <input class="w-full bg-surface-container-lowest border-none ring-1 ring-outline-variant/20 rounded-xl py-2 pl-10 pr-4 text-sm focus:ring-primary" placeholder="Суралцагчийн нэр эсвэл дугаараар хайх..." type="text"/>
       </div>
+    </div>
+    <div class="flex items-center gap-4">
+      <button class="p-2 text-slate-500 hover:bg-slate-200/50 rounded-full relative"><span class="material-symbols-outlined">notifications</span><span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span></button>
+      <div class="flex items-center gap-3 px-2 py-1 rounded-full hover:bg-slate-200/50 cursor-pointer">
+        <div class="text-right hidden sm:block"><p class="text-xs font-bold text-primary">Алтангэрэл Б.</p><p class="text-[10px] text-slate-500">Ахлах зааварлагч</p></div>
+        <img alt="Instructor" class="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm" src="https://i.pravatar.cc/150?img=8"/>
+      </div>
+    </div>
+  </header>
 
-      <div class="glass-card" style="margin-top: 24px;">
-        <h2>Өнөөдрийн хуваарь</h2>
-        <div class="info-grid">
-          <div class="info-card"><strong>09:00</strong><span>Г. Болд - Toyota Camry</span></div>
-          <div class="info-card"><strong>11:00</strong><span>О. Наранбаатар - Hyundai Sonata</span></div>
-          <div class="info-card"><strong>14:00</strong><span>Т. Энхтуяа - Toyota Camry</span></div>
+  <div class="p-8 max-w-7xl mx-auto">
+    <!-- Hero Bento -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-8">
+      <div class="md:col-span-8 p-8 bg-primary-container rounded-3xl relative overflow-hidden flex flex-col justify-between min-h-[240px]">
+        <div class="relative z-10">
+          <h2 class="text-white/70 text-sm font-bold uppercase tracking-widest mb-2">Өнөөдрийн гүйцэтгэл</h2>
+          <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tighter mb-4">98% Амжилттай</h1>
+          <p class="text-on-primary-container max-w-md">Та өнөөдөр 8 суралцагчтай хичээллэж байна. Одоогоор 3 суралцагч шалгалтаа амжилттай өгөөд байна.</p>
+        </div>
+        <div class="relative z-10 flex gap-8 mt-6">
+          <div><p class="text-white/60 text-[10px] font-bold uppercase tracking-widest">Нийт цаг</p><p class="text-2xl font-bold text-white tracking-tight">1,240 <span class="text-xs font-normal">ц</span></p></div>
+          <div><p class="text-white/60 text-[10px] font-bold uppercase tracking-widest">Үнэлгээ</p><div class="flex items-center gap-1"><p class="text-2xl font-bold text-white tracking-tight">4.9</p><span class="material-symbols-outlined text-secondary-fixed text-sm" style="font-variation-settings:'FILL' 1;">star</span></div></div>
+        </div>
+        <div class="absolute right-[-5%] bottom-[-10%] opacity-10"><span class="material-symbols-outlined" style="font-size:200px">trending_up</span></div>
+      </div>
+      <div class="md:col-span-4 grid grid-rows-2 gap-6">
+        <div class="bg-surface-container-lowest p-6 rounded-3xl shadow-[0_20px_40px_rgba(10,46,92,0.06)] flex items-center gap-4">
+          <div class="w-14 h-14 bg-secondary-container rounded-2xl flex items-center justify-center"><span class="material-symbols-outlined text-on-secondary-container text-3xl">schedule</span></div>
+          <div><p class="text-on-surface-variant text-xs font-bold uppercase tracking-widest">Дараагийн хичээл</p><p class="text-xl font-extrabold text-primary tracking-tight">14:30 - 16:00</p><p class="text-sm text-slate-500">Тэмүүлэн. Б</p></div>
+        </div>
+        <div class="bg-surface-container-lowest p-6 rounded-3xl shadow-[0_20px_40px_rgba(10,46,92,0.06)] flex items-center gap-4">
+          <div class="w-14 h-14 bg-tertiary-fixed rounded-2xl flex items-center justify-center"><span class="material-symbols-outlined text-on-tertiary text-3xl">directions_car</span></div>
+          <div><p class="text-on-surface-variant text-xs font-bold uppercase tracking-widest">Тээврийн хэрэгсэл</p><p class="text-xl font-extrabold text-primary tracking-tight">Prius 20</p><p class="text-sm text-slate-500">78-90 УБЭ</p></div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <footer class="footer">
-      <p>© 2026 DriveSchool.</p>
-    </footer>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Schedule -->
+      <div class="lg:col-span-2 space-y-6">
+        <div class="flex items-center justify-between">
+          <h3 class="text-2xl font-extrabold tracking-tight text-primary">Өнөөдрийн хуваарь</h3>
+          <a href="booking.html" class="text-sm font-bold text-secondary hover:underline">Бүгдийг харах</a>
+        </div>
+        <div class="bg-surface-container-lowest rounded-3xl overflow-hidden shadow-[0_20px_40px_rgba(10,46,92,0.06)]">
+          <div class="divide-y divide-slate-50">
+            <div class="p-6 flex items-center gap-6 hover:bg-slate-50/50 transition-colors">
+              <div class="flex flex-col items-center justify-center min-w-[60px] py-2 bg-secondary-container/30 rounded-xl"><span class="text-xs font-bold text-secondary uppercase">Одоо</span><span class="text-lg font-black text-secondary">09:00</span></div>
+              <div class="flex-1"><h4 class="font-bold text-primary">Бат-Эрдэнэ. Г</h4><p class="text-xs text-slate-500">Жолооны дадлага • 12-р хичээл</p></div>
+              <span class="px-3 py-1 bg-secondary text-on-secondary text-[10px] font-bold rounded-full uppercase">Идэвхтэй</span>
+            </div>
+            <div class="p-6 flex items-center gap-6 hover:bg-slate-50/50 transition-colors opacity-70">
+              <div class="flex flex-col items-center justify-center min-w-[60px] py-2 bg-slate-100 rounded-xl"><span class="text-xs font-bold text-slate-400 uppercase">Дууссан</span><span class="text-lg font-black text-slate-400">07:30</span></div>
+              <div class="flex-1"><h4 class="font-bold text-primary">Саруул. М</h4><p class="text-xs text-slate-500">Онолын давтлага • 4-р хичээл</p></div>
+              <span class="px-3 py-1 bg-slate-200 text-slate-600 text-[10px] font-bold rounded-full uppercase">Дууссан</span>
+            </div>
+            <div class="p-6 flex items-center gap-6 hover:bg-slate-50/50 transition-colors">
+              <div class="flex flex-col items-center justify-center min-w-[60px] py-2 bg-surface-container rounded-xl"><span class="text-xs font-bold text-slate-500 uppercase">Дараа</span><span class="text-lg font-black text-slate-600">11:00</span></div>
+              <div class="flex-1"><h4 class="font-bold text-primary">Нарантуяа. О</h4><p class="text-xs text-slate-500">Ухралт, зогсоолын дадлага • 8-р хичээл</p></div>
+              <span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-[10px] font-bold rounded-full uppercase">Хүлээгдэж буй</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Vehicle + QPay -->
+      <div class="space-y-6">
+        <h3 class="text-2xl font-extrabold tracking-tight text-primary">Автомашин</h3>
+        <div class="bg-surface-container-lowest rounded-3xl p-6 shadow-[0_20px_40px_rgba(10,46,92,0.06)] border-t-4 border-secondary">
+          <div class="flex justify-between items-start mb-6">
+            <div><h4 class="text-lg font-extrabold text-primary leading-tight">Toyota Prius 20</h4><p class="text-xs text-slate-500 font-medium">Арлын дугаар: NHW20-123***</p></div>
+            <div class="px-2 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-bold rounded uppercase">Бэлэн</div>
+          </div>
+          <div class="relative h-40 w-full mb-6 rounded-2xl overflow-hidden bg-slate-100">
+            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=600&q=80" class="w-full h-full object-cover" alt="Prius"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-4"><span class="text-white text-sm font-bold">78-90 УБЭ</span></div>
+          </div>
+          <div class="space-y-4">
+            <div><div class="flex justify-between text-xs mb-1"><span class="text-slate-500">Шатахуун</span><span class="text-primary font-bold">72%</span></div><div class="w-full h-1.5 bg-slate-100 rounded-full"><div class="h-full bg-secondary rounded-full w-[72%]"></div></div></div>
+            <div><div class="flex justify-between text-xs mb-1"><span class="text-slate-500">Дугуйн хий</span><span class="text-primary font-bold">Хэвийн</span></div><div class="w-full h-1.5 bg-slate-100 rounded-full"><div class="h-full bg-secondary rounded-full w-full"></div></div></div>
+            <div><div class="flex justify-between text-xs mb-1"><span class="text-slate-500">Тос солих хугацаа</span><span class="text-error font-bold">1,200 км үлдсэн</span></div><div class="w-full h-1.5 bg-slate-100 rounded-full"><div class="h-full bg-error rounded-full w-[15%]"></div></div></div>
+          </div>
+          <button class="w-full mt-6 py-3 bg-slate-100 text-primary text-sm font-bold rounded-xl hover:bg-slate-200">Засвар үйлчилгээний түүх</button>
+        </div>
+        <div class="bg-gradient-to-br from-secondary to-on-secondary-container p-6 rounded-3xl text-white shadow-xl">
+          <div class="flex items-center justify-between mb-4">
+            <span class="material-symbols-outlined text-3xl">account_balance_wallet</span>
+            <span class="text-[10px] font-bold uppercase tracking-widest bg-white/20 px-2 py-0.5 rounded">QPay Төлбөр</span>
+          </div>
+          <p class="text-xs text-white/80 mb-1">Энэ сарын нийт урамшуулал</p>
+          <h4 class="text-2xl font-black mb-4">840,000 ₮</h4>
+          <a href="finance.html" class="w-full py-2.5 bg-white text-secondary font-bold rounded-xl text-sm shadow-lg active:scale-95 transition-transform block text-center">Орлого татах</a>
+        </div>
+      </div>
+    </div>
   </div>
-  <script src="app.js"></script>
+</main>
+
+<!-- Mobile BottomNav -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-lg border-t border-slate-100 flex justify-around items-center py-3 px-4 z-50">
+  <a href="teacher-dashboard.html" class="flex flex-col items-center gap-1 text-primary"><span class="material-symbols-outlined text-2xl" style="font-variation-settings:'FILL' 1;">dashboard</span><span class="text-[10px] font-bold">Нүүр</span></a>
+  <a href="booking.html" class="flex flex-col items-center gap-1 text-slate-400"><span class="material-symbols-outlined text-2xl">calendar_month</span><span class="text-[10px] font-medium">Хуваарь</span></a>
+  <a href="#" class="flex flex-col items-center gap-1 text-slate-400"><span class="material-symbols-outlined text-2xl">directions_car</span><span class="text-[10px] font-medium">Машин</span></a>
+  <a href="#" class="flex flex-col items-center gap-1 text-slate-400"><span class="material-symbols-outlined text-2xl">person</span><span class="text-[10px] font-medium">Профайл</span></a>
+</nav>
+
+<button onclick="window.location.href='booking.html'" class="fixed bottom-24 md:bottom-8 right-8 w-14 h-14 bg-primary text-white rounded-full shadow-[0_20px_40px_rgba(0,25,59,0.3)] flex items-center justify-center z-40 active:scale-95 transition-transform">
+  <span class="material-symbols-outlined text-2xl">add</span>
+</button>
+
+<script src="shared-sidebar.js"></script>
+<script>renderSidebar('dashboard');</script>
 </body>
 </html>

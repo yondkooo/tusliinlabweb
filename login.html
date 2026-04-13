@@ -1,67 +1,274 @@
 <!DOCTYPE html>
 <html lang="mn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DriveSchool — Нэвтрэх</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Нэвтрэх | Steppe Architect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "surface-container-highest": "#e0e3e5","surface-tint": "#425f8f","on-surface": "#191c1e","secondary-fixed-dim": "#6fd7d6","on-primary": "#ffffff","surface-container": "#eceef0","on-secondary-fixed": "#002020","primary-fixed-dim": "#abc7fe","on-background": "#191c1e","inverse-on-surface": "#eff1f3","tertiary": "#2f1100","surface-container-high": "#e6e8ea","on-primary-fixed-variant": "#294776","on-primary-fixed": "#001b3e","secondary": "#006a6a","on-error-container": "#93000a","on-secondary-container": "#007070","surface-variant": "#e0e3e5","on-secondary": "#ffffff","outline": "#747780","inverse-primary": "#abc7fe","on-tertiary-fixed-variant": "#6e3914","surface-container-low": "#f2f4f6","secondary-fixed": "#8cf3f3","on-secondary-fixed-variant": "#004f4f","error": "#ba1a1a","on-tertiary-fixed": "#321200","secondary-container": "#8cf3f3","primary-fixed": "#d6e3ff","tertiary-fixed": "#ffdbc9","on-surface-variant": "#43474f","background": "#f7f9fb","tertiary-fixed-dim": "#ffb68b","inverse-surface": "#2d3133","on-error": "#ffffff","outline-variant": "#c4c6d0","primary": "#00193b","error-container": "#ffdad6","tertiary-container": "#4f2100","on-primary-container": "#7a97cb","primary-container": "#0a2e5c","surface-bright": "#f7f9fb","on-tertiary-container": "#cb855a","surface-container-lowest": "#ffffff","on-tertiary": "#ffffff","surface-dim": "#d8dadc","surface": "#f7f9fb"
+      },
+      borderRadius: {"DEFAULT": "0.25rem","lg": "0.5rem","xl": "0.75rem","full": "9999px"},
+      fontFamily: {"headline": ["Manrope"],"body": ["Inter"],"label": ["Inter"]}
+    }
+  }
+}
+</script>
+<style>
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.tight-tracked { letter-spacing: -0.04em; }
+.ambient-shadow { box-shadow: 0 20px 40px rgba(10, 46, 92, 0.06); }
+</style>
 </head>
-<body>
-  <div class="page-shell">
-    <nav class="topbar">
-      <a class="brand" href="index.html">DriveSchool</a>
-      <div class="nav-links">
-        <a href="index.html" class="nav-link">Нүүр</a>
-       
-        <a href="test.html" class="nav-link">Шалгалт</a>
-        <a href="contract.html" class="nav-link">Гэрээ</a>
-        <a href="book.html" class="nav-link">Ном</a>
-        <a href="booking.html" class="nav-link">Захиалга</a>
-    
+<body class="bg-background font-body text-on-background overflow-hidden">
+<main class="flex h-screen w-full">
+  <!-- Left Pane -->
+  <section class="w-full lg:w-1/2 flex flex-col p-8 md:p-12 lg:p-16 overflow-y-auto bg-surface">
+    <!-- Brand -->
+    <div class="flex items-center gap-3 mb-12">
+      <div class="w-10 h-10 bg-primary flex items-center justify-center rounded-xl">
+        <span class="material-symbols-outlined text-on-primary" style="font-variation-settings:'FILL' 1;">architecture</span>
       </div>
-      <button class="topbar-btn">Тусламж</button>
-      <button class="theme-btn" type="button" aria-label="Тод/хар горим">🌙</button>
-    </nav>
+      <div class="flex flex-col">
+        <a href="index.html" class="font-headline font-extrabold text-xl text-primary tight-tracked">Steppe Architect</a>
+        <span class="text-[10px] font-bold text-on-primary-container tracking-widest uppercase">Driving Education v2.0</span>
+      </div>
+    </div>
 
-    <section class="section">
-      <div class="page-header">
-        <h1>Нэвтрэх</h1>
-        <p>DriveSchool системд нэвтэрч, онол, практик, захиалга, гэрээ болон удирдлагын самбар руу хандалт аваарай.</p>
+    <div class="max-w-md w-full mx-auto my-auto">
+      <header class="mb-10">
+        <h2 class="font-headline font-extrabold text-3xl text-primary tight-tracked mb-2">Тавтай морил</h2>
+        <p class="text-on-surface-variant font-body">Суралцагчийн системд нэвтэрч жолооны боловсролоо удирдана уу.</p>
+      </header>
+
+      <!-- Tab Switch -->
+      <div class="flex gap-1 p-1 bg-surface-container-low rounded-xl mb-8" id="tabContainer">
+        <button id="loginTab" onclick="showTab('login')" class="flex-1 py-2 text-sm font-bold rounded-lg bg-surface-container-lowest text-primary ambient-shadow">Нэвтрэх</button>
+        <button id="registerTab" onclick="showTab('register')" class="flex-1 py-2 text-sm font-medium text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg">Бүртгүүлэх</button>
       </div>
 
-      <div class="form-panel glass-card">
-        <div class="form-field">
-          <label for="email">Имэйл хаяг</label>
-          <input type="email" id="email" placeholder="taniiemail@example.com">
-        </div>
-        <div class="form-field">
-          <label for="password">Нууц үг</label>
-          <input type="password" id="password" placeholder="••••••••">
-        </div>
-        <div class="form-field">
-          <label for="role-select">Хэрэглэгчийн төрөл</label>
-          <select id="role-select">
-            <option value="student">
-                <a href="index.html">
-                Суралцагч</a></option>
-            <option value="teacher">
-                <a href="teacher-dashboard.html">
-                Багш</a></option>
-            <option value="admin"><a href="admin-dashboard.html">
-                Админ</a></option>
-          </select>
-        </div>
-        <button class="btn btn-primary btn-login">Нэвтрэх</button>
-        <p style="color: rgba(237,244,255,0.7); margin-top: 18px;">Admin болон Багшийн самбарт орохын тулд нэвтэрнэ үү.</p>
-      </div>
-    </section>
+      <!-- Login Form -->
+      <div id="loginForm">
+        <form class="space-y-6" onsubmit="handleLogin(event)">
+          <div class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold text-on-surface-variant mb-1.5 ml-1">Имэйл эсвэл Утасны дугаар</label>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <span class="material-symbols-outlined text-outline text-lg">person</span>
+                </div>
+                <input id="loginEmail" class="w-full bg-surface-container-lowest border-none ring-1 ring-outline-variant/20 focus:ring-2 focus:ring-primary rounded-xl py-3.5 pl-11 pr-4 text-on-surface placeholder:text-outline/50 transition-all font-body text-sm" placeholder="Мэйл хаяг эсвэл 8800...." type="text"/>
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-on-surface-variant mb-1.5 ml-1">Нууц үг</label>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <span class="material-symbols-outlined text-outline text-lg">lock</span>
+                </div>
+                <input id="loginPassword" class="w-full bg-surface-container-lowest border-none ring-1 ring-outline-variant/20 focus:ring-2 focus:ring-primary rounded-xl py-3.5 pl-11 pr-11 text-on-surface placeholder:text-outline/50 transition-all font-body text-sm" placeholder="••••••••" type="password"/>
+                <button type="button" onclick="togglePassword('loginPassword')" class="absolute inset-y-0 right-0 pr-4 flex items-center text-outline hover:text-primary transition-colors">
+                  <span class="material-symbols-outlined text-lg">visibility</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <label class="flex items-center gap-2 cursor-pointer group">
+              <input class="w-4 h-4 rounded border-outline-variant/50 text-primary focus:ring-primary" type="checkbox"/>
+              <span class="text-xs font-medium text-on-surface-variant group-hover:text-primary transition-colors">Намайг сана</span>
+            </label>
+            <a class="text-xs font-bold text-primary hover:underline" href="#">Нууц үг мартсан?</a>
+          </div>
+          <!-- Role selection -->
+          <div class="space-y-2">
+            <label class="block text-xs font-bold text-on-surface-variant mb-1.5 ml-1">Нэвтрэх хэлбэр</label>
+            <div class="grid grid-cols-3 gap-2">
+              <label class="flex flex-col items-center gap-1 p-3 rounded-xl border-2 border-primary bg-primary/5 cursor-pointer">
+                <input type="radio" name="role" value="student" class="sr-only" checked/>
+                <span class="material-symbols-outlined text-primary text-lg">school</span>
+                <span class="text-[10px] font-bold text-primary">Сурагч</span>
+              </label>
+              <label class="flex flex-col items-center gap-1 p-3 rounded-xl border-2 border-outline-variant/30 hover:border-primary cursor-pointer transition-colors">
+                <input type="radio" name="role" value="teacher" class="sr-only"/>
+                <span class="material-symbols-outlined text-outline text-lg">person_pin</span>
+                <span class="text-[10px] font-bold text-outline">Багш</span>
+              </label>
+              <label class="flex flex-col items-center gap-1 p-3 rounded-xl border-2 border-outline-variant/30 hover:border-primary cursor-pointer transition-colors">
+                <input type="radio" name="role" value="admin" class="sr-only"/>
+                <span class="material-symbols-outlined text-outline text-lg">admin_panel_settings</span>
+                <span class="text-[10px] font-bold text-outline">Админ</span>
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold text-sm ambient-shadow hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+            Нэвтрэх
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </button>
+        </form>
 
-    <footer class="footer">
-      <p>© 2026 DriveSchool.</p>
+        <!-- Social Login -->
+        <div class="mt-10">
+          <div class="relative mb-8">
+            <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-outline-variant/20"></div></div>
+            <div class="relative flex justify-center text-xs uppercase tracking-widest font-bold">
+              <span class="px-4 bg-surface text-outline">Эсвэл</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <button onclick="handleSocialLogin()" class="flex items-center justify-center gap-3 py-3 px-4 bg-surface-container-lowest ring-1 ring-outline-variant/20 rounded-xl hover:bg-surface-container-low transition-all active:scale-95">
+              <svg class="w-5 h-5" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              <span class="text-sm font-bold text-on-surface">Google</span>
+            </button>
+            <button onclick="handleSocialLogin()" class="flex items-center justify-center gap-3 py-3 px-4 bg-surface-container-lowest ring-1 ring-outline-variant/20 rounded-xl hover:bg-surface-container-low transition-all active:scale-95">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.05 20.28c-.96.95-2.21 1.72-3.71 1.72-1.45 0-2.33-.74-3.59-.74-1.28 0-2.25.72-3.61.72-1.4 0-2.72-.81-3.76-2.04-2.12-2.52-1.63-6.53.43-9.5 1.01-1.45 2.51-2.37 4.13-2.4 1.23-.02 2.39.83 3.15.83.74 0 2.11-.97 3.6-.82 1.54.15 2.74.83 3.53 1.99-3.23 1.93-2.71 6.11.53 7.42-.64 1.58-1.55 3.08-3.04 4.82zM12.12 5.06c-.1-1.89 1.56-3.55 3.38-3.66.19 2.04-1.88 3.75-3.38 3.66z"/></svg>
+              <span class="text-sm font-bold text-on-surface">Apple</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- QPay -->
+        <div class="mt-8 p-4 bg-secondary-container/20 rounded-xl flex items-center gap-4">
+          <div class="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
+            <span class="material-symbols-outlined text-on-secondary" style="font-variation-settings:'FILL' 1;">qr_code_scanner</span>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-on-secondary-container">Шуурхай төлөлт</p>
+            <p class="text-[10px] text-on-secondary-container/70">QPay-р хичээлийн төлбөрөө төлөх боломжтой</p>
+          </div>
+          <a href="finance.html" class="ml-auto p-2 bg-secondary rounded-lg text-on-secondary">
+            <span class="material-symbols-outlined text-sm">chevron_right</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Register Form -->
+      <div id="registerForm" class="hidden">
+        <form class="space-y-4" onsubmit="handleRegister(event)">
+          <div>
+            <label class="block text-xs font-bold text-on-surface-variant mb-1.5 ml-1">Нэр</label>
+            <input class="w-full bg-surface-container-lowest border-none ring-1 ring-outline-variant/20 focus:ring-2 focus:ring-primary rounded-xl py-3.5 px-4 text-sm" placeholder="Таны нэр" type="text"/>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-on-surface-variant mb-1.5 ml-1">Имэйл</label>
+            <input class="w-full bg-surface-container-lowest border-none ring-1 ring-outline-variant/20 focus:ring-2 focus:ring-primary rounded-xl py-3.5 px-4 text-sm" placeholder="email@example.com" type="email"/>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-on-surface-variant mb-1.5 ml-1">Утасны дугаар</label>
+            <input class="w-full bg-surface-container-lowest border-none ring-1 ring-outline-variant/20 focus:ring-2 focus:ring-primary rounded-xl py-3.5 px-4 text-sm" placeholder="8800 0000" type="tel"/>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-on-surface-variant mb-1.5 ml-1">Нууц үг</label>
+            <input class="w-full bg-surface-container-lowest border-none ring-1 ring-outline-variant/20 focus:ring-2 focus:ring-primary rounded-xl py-3.5 px-4 text-sm" placeholder="••••••••" type="password"/>
+          </div>
+          <button type="submit" class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold text-sm ambient-shadow hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+            Бүртгүүлэх
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <footer class="mt-auto pt-8 text-center">
+      <p class="text-[11px] text-outline font-medium tracking-wide uppercase">© 2024 Steppe Architect • Улаанбаатар хот</p>
     </footer>
-  </div>
-  <script src="app.js"></script>
+  </section>
+
+  <!-- Right Pane -->
+  <section class="hidden lg:block w-1/2 relative bg-primary overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-tr from-primary to-primary-container mix-blend-multiply opacity-60 z-10"></div>
+    <img alt="Mongolian landscape" class="absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200&q=80"/>
+    <div class="absolute inset-0 z-20 flex flex-col justify-end p-16">
+      <div class="max-w-md">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary text-on-secondary rounded-full text-[10px] font-bold uppercase tracking-widest mb-6">
+          <span class="material-symbols-outlined text-xs">verified</span>
+          Монгол Улсын Стандарт
+        </div>
+        <h3 class="font-headline font-extrabold text-5xl text-white leading-[1.1] mb-6 tight-tracked">
+          Ирээдүйн жолооч таны <br/><span class="text-secondary-fixed">ухаалаг</span> сонголт.
+        </h3>
+        <div class="grid grid-cols-2 gap-8 mt-12">
+          <div>
+            <p class="font-headline font-extrabold text-3xl text-white tight-tracked">98%</p>
+            <p class="text-sm text-on-primary-container font-medium">Шалгалтын тэнцэлт</p>
+          </div>
+          <div>
+            <p class="font-headline font-extrabold text-3xl text-white tight-tracked">12+</p>
+            <p class="text-sm text-on-primary-container font-medium">Сүүлийн үеийн Prius 20, Sonata 7</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+function showTab(tab) {
+  const loginForm = document.getElementById('loginForm');
+  const registerForm = document.getElementById('registerForm');
+  const loginTab = document.getElementById('loginTab');
+  const registerTab = document.getElementById('registerTab');
+  if (tab === 'login') {
+    loginForm.classList.remove('hidden');
+    registerForm.classList.add('hidden');
+    loginTab.className = 'flex-1 py-2 text-sm font-bold rounded-lg bg-surface-container-lowest text-primary shadow';
+    registerTab.className = 'flex-1 py-2 text-sm font-medium text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg';
+  } else {
+    loginForm.classList.add('hidden');
+    registerForm.classList.remove('hidden');
+    registerTab.className = 'flex-1 py-2 text-sm font-bold rounded-lg bg-surface-container-lowest text-primary shadow';
+    loginTab.className = 'flex-1 py-2 text-sm font-medium text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg';
+  }
+}
+
+function togglePassword(id) {
+  const input = document.getElementById(id);
+  input.type = input.type === 'password' ? 'text' : 'password';
+}
+
+// Role radio styling
+document.querySelectorAll('input[name="role"]').forEach(radio => {
+  radio.addEventListener('change', function() {
+    document.querySelectorAll('input[name="role"]').forEach(r => {
+      const label = r.closest('label');
+      const icon = label.querySelector('.material-symbols-outlined');
+      const text = label.querySelector('span:last-child');
+      if (r.checked) {
+        label.className = 'flex flex-col items-center gap-1 p-3 rounded-xl border-2 border-primary bg-primary/5 cursor-pointer';
+        icon.className = 'material-symbols-outlined text-primary text-lg';
+        text.className = 'text-[10px] font-bold text-primary';
+      } else {
+        label.className = 'flex flex-col items-center gap-1 p-3 rounded-xl border-2 border-outline-variant/30 hover:border-primary cursor-pointer transition-colors';
+        icon.className = 'material-symbols-outlined text-outline text-lg';
+        text.className = 'text-[10px] font-bold text-outline';
+      }
+    });
+  });
+});
+
+function handleLogin(e) {
+  e.preventDefault();
+  const role = document.querySelector('input[name="role"]:checked').value;
+  if (role === 'admin') window.location.href = 'admin-dashboard.html';
+  else if (role === 'teacher') window.location.href = 'teacher-dashboard.html';
+  else window.location.href = 'student-dashboard.html';
+}
+
+function handleRegister(e) {
+  e.preventDefault();
+  window.location.href = 'student-dashboard.html';
+}
+
+function handleSocialLogin() {
+  window.location.href = 'student-dashboard.html';
+}
+</script>
 </body>
 </html>
